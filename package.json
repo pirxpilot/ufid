@@ -1,0 +1,31 @@
+{
+  "name": "ufid",
+  "version": "0.0.0",
+  "description": "URL friendly reasonably unique ids.",
+  "author": {
+    "name": "Damian Krzeminski",
+    "email": "pirxpilot@furkot.com",
+    "url": "https://pirxpilot.me"
+  },
+  "repository": "pirxpilot/ufid",
+  "license": "MIT",
+  "keywords": [
+    "ufid",
+    "uuid"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "jshint": "~2",
+    "tape": "~5"
+  },
+  "browser": {
+    "./lib/random-byte-stream.js": "./lib/browser/random-byte-stream.js"
+  },
+  "scripts": {
+    "test": "make check"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ]
+}
