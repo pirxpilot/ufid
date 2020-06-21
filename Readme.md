@@ -15,27 +15,38 @@ $ npm install --save ufid
 
 ## Usage
 
-```js
-const { uid } = require('ufid');
-
-
-console.log(uid());  // 6 characters long
-console.log(uid(10));  // provide size
-console.log(uid(10, 'abcdef'));  // provide size and alphabet
-
-```
-
-or:
+Generate uids with only numbers and letters (both uppercase and lowercase):
 
 ```js
 const { generator } = require('ufid');
+const uid = generator({ size: 10 });
+
+uid();  // 10 characters long
+uid();  // another one
+```
 
 
-// size and alphabet are both optional
-const uid = generator({ size: 10, alphabet: 'abc0123A' });
+With custom alfabet:
 
-console.log(uid());  // 10 characters long
-console.log(uid());  // another one
+```js
+const { generator } = require('ufid');
+const uid = generator({ size: 12, alphabet: 'abc0123A' });
+
+uid();  // 12 characters long, only a-c, 0-3, and A
+
+```
+
+
+With custom byte stream:
+
+```js
+const { generator } = require('ufid');
+const byteStream = {
+  next: () => Math.floor(Math.random() * 255)
+};
+const uid = generator({ size: 6, byteStream });
+
+uid();  // 6 characters long using non-secure random
 
 ```
 
@@ -47,8 +58,8 @@ MIT © [Damian Krzeminski](https://pirxpilot.me)
 [npm-image]: https://img.shields.io/npm/v/ufid.svg
 [npm-url]: https://npmjs.org/package/ufid
 
-[travis-url]: https://travis-ci.org/pirxpilot/ufid
-[travis-image]: https://img.shields.io/travis/pirxpilot/ufid.svg
+[travis-url]: https://travis-ci.com/pirxpilot/ufid
+[travis-image]: https://img.shields.io/travis/com/pirxpilot/ufid.svg
 
 [deps-image]: https://img.shields.io/david/pirxpilot/ufid.svg
 [deps-url]: https://david-dm.org/pirxpilot/ufid
