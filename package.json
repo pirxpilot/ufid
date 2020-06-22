@@ -1,6 +1,6 @@
 {
   "name": "ufid",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "URL friendly reasonably unique ids.",
   "author": {
     "name": "Damian Krzeminski",
