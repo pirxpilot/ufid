@@ -22,7 +22,8 @@ const { generator } = require('ufid');
 const uid = generator({ size: 10 });
 
 uid();  // 10 characters long
-uid();  // another one
+uid();  // another one - also 10 characters long
+uid(8); // another one 8 characters long
 ```
 
 
@@ -42,7 +43,7 @@ With custom byte stream:
 ```js
 const { generator } = require('ufid');
 const byteStream = {
-  next: () => Math.floor(Math.random() * 255)
+  next: () => Math.random() * 62
 };
 const uid = generator({ size: 6, byteStream });
 

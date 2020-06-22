@@ -18,6 +18,20 @@ test('basic', function(t) {
   t.end();
 });
 
+test('overwrite size', function(t) {
+  const uid = generator();
+  const a = uid();
+
+  t.equal(a.length, 6);
+  t.match(a, /^[a-zA-Z0-9]+$/);
+
+  const b = uid(10);
+  t.equal(b.length, 10);
+  t.match(b, /^[a-zA-Z0-9]+$/);
+
+  t.end();
+});
+
 test('with alphabet', function(t) {
   const uid = generator({ alphabet: 'abc123' });
   const a = uid();
