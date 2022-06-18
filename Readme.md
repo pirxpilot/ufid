@@ -1,7 +1,6 @@
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][build-image]][build-url]
 [![Dependency Status][deps-image]][deps-url]
-[![Dev Dependency Status][deps-dev-image]][deps-dev-url]
 
 # ufid
 
@@ -56,14 +55,12 @@ uid();  // 6 characters long using non-secure random
 
 MIT © [Damian Krzeminski](https://pirxpilot.me)
 
-[npm-image]: https://img.shields.io/npm/v/ufid.svg
+[npm-image]: https://img.shields.io/npm/v/ufid
 [npm-url]: https://npmjs.org/package/ufid
 
-[travis-url]: https://travis-ci.com/pirxpilot/ufid
-[travis-image]: https://img.shields.io/travis/com/pirxpilot/ufid.svg
+[build-url]: https://github.com/pirxpilot/ufid/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/workflow/status/pirxpilot/ufid/check
 
-[deps-image]: https://img.shields.io/david/pirxpilot/ufid.svg
-[deps-url]: https://david-dm.org/pirxpilot/ufid
+[deps-image]: https://img.shields.io/librariesio/release/npm/ufid
+[deps-url]: https://libraries.io/npm/ufid
 
-[deps-dev-image]: https://img.shields.io/david/dev/pirxpilot/ufid.svg
-[deps-dev-url]: https://david-dm.org/pirxpilot/ufid?type=dev
