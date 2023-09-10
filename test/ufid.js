@@ -1,92 +1,79 @@
-const test = require('tape');
+const test = require('node:test');
+const assert = require('node:assert/strict');
 const generator = require('../lib/ufid');
 const randomByteStream = require('../lib/random-byte-stream');
 
-test('basic', function(t) {
+test('basic', function () {
   const uid = generator();
   const a = uid();
 
-  t.equal(a.length, 6);
-  t.match(a, /^[a-zA-Z0-9]+$/);
+  assert.equal(a.length, 6);
+  assert.match(a, /^[a-zA-Z0-9]+$/);
 
   const b = uid();
-  t.equal(b.length, 6);
-  t.match(b, /^[a-zA-Z0-9]+$/);
+  assert.equal(b.length, 6);
+  assert.match(b, /^[a-zA-Z0-9]+$/);
 
-  t.notEqual(a, b);
-
-  t.end();
+  assert.notEqual(a, b);
 });
 
-test('overwrite size', function(t) {
+test('overwrite size', function () {
   const uid = generator();
   const a = uid();
 
-  t.equal(a.length, 6);
-  t.match(a, /^[a-zA-Z0-9]+$/);
+  assert.equal(a.length, 6);
+  assert.match(a, /^[a-zA-Z0-9]+$/);
 
   const b = uid(10);
-  t.equal(b.length, 10);
-  t.match(b, /^[a-zA-Z0-9]+$/);
-
-  t.end();
+  assert.equal(b.length, 10);
+  assert.match(b, /^[a-zA-Z0-9]+$/);
 });
 
-test('with alphabet', function(t) {
+test('with alphabet', function () {
   const uid = generator({ alphabet: 'abc123' });
   const a = uid();
 
-  t.equal(a.length, 6);
-  t.match(a, /^[abc123]+$/);
-
-  t.end();
+  assert.equal(a.length, 6);
+  assert.match(a, /^[abc123]+$/);
 });
 
-test('with size', function(t) {
+test('with size', function () {
   const uid = generator({ size: 10 });
   const a = uid();
 
-  t.equal(a.length, 10);
-  t.match(a, /^[a-zA-Z0-9]+$/);
-
-  t.end();
+  assert.equal(a.length, 10);
+  assert.match(a, /^[a-zA-Z0-9]+$/);
 });
 
-test('with buffer size', function(t) {
+test('with buffer size', function () {
   const uid = generator({ bufferSize: 1024, size: 100 });
   const a = uid();
 
-  t.equal(a.length, 100);
-  t.match(a, /^[a-zA-Z0-9]+$/);
-
-  t.end();
+  assert.equal(a.length, 100);
+  assert.match(a, /^[a-zA-Z0-9]+$/);
 });
 
-test('with custom byte stream', function(t) {
+test('with custom byte stream', function () {
   const byteStream = {
     next: () => Math.floor(Math.random() * 255)
   };
   const uid = generator({ byteStream });
 
   const a = uid();
-  t.equal(a.length, 6);
-  t.match(a, /^[a-zA-Z0-9]+$/);
-
-  t.end();
+  assert.equal(a.length, 6);
+  assert.match(a, /^[a-zA-Z0-9]+$/);
 });
 
-test('with shared buffer', function(t) {
+test('with shared buffer', function () {
   const byteStream = randomByteStream(128);
   const uid = generator({ byteStream });
   const uid2 = generator({ byteStream, size: 12 });
 
   const a = uid();
-  t.equal(a.length, 6);
-  t.match(a, /^[a-zA-Z0-9]+$/);
+  assert.equal(a.length, 6);
+  assert.match(a, /^[a-zA-Z0-9]+$/);
 
   const b = uid2();
-  t.equal(b.length, 12);
-  t.match(b, /^[a-zA-Z0-9]+$/);
-
-  t.end();
+  assert.equal(b.length, 12);
+  assert.match(b, /^[a-zA-Z0-9]+$/);
 });
