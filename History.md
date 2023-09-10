@@ -1,4 +1,10 @@
 
+1.1.2 / 2023-09-10
+==================
+
+ * fix Buffer.allocUnsafe call
+ * replace tape with node test runner
+
 1.1.1 / 2022-06-18
 ==================
 
