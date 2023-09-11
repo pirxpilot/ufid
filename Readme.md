@@ -59,7 +59,7 @@ MIT © [Damian Krzeminski](https://pirxpilot.me)
 [npm-url]: https://npmjs.org/package/ufid
 
 [build-url]: https://github.com/pirxpilot/ufid/actions/workflows/check.yaml
-[build-image]: https://img.shields.io/github/workflow/status/pirxpilot/ufid/check
+[build-image]: https://img.shields.io/github/actions/workflow/status/pirxpilot/ufid/check.yaml?branch=main
 
 [deps-image]: https://img.shields.io/librariesio/release/npm/ufid
 [deps-url]: https://libraries.io/npm/ufid
