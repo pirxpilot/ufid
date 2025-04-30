@@ -1,4 +1,2 @@
-module.exports = {
-  generator: require('./lib/ufid'),
-  byteStream: require('./lib/random-byte-stream')
-};
+export { default as generator } from './lib/ufid.js';
+export { default as byteStream } from './lib/random-byte-stream.js';

@@ -1,7 +1,7 @@
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const generator = require('../lib/ufid');
-const randomByteStream = require('../lib/random-byte-stream');
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import randomByteStream from '../lib/random-byte-stream.js';
+import generator from '../lib/ufid.js';
 
 test('basic', function () {
   const uid = generator();
