@@ -2,6 +2,8 @@
   "name": "ufid",
   "version": "1.1.2",
   "description": "URL friendly reasonably unique ids.",
+  "type": "module",
+  "exports": "./index.js",
   "author": {
     "name": "Damian Krzeminski",
     "email": "pirxpilot@furkot.com",

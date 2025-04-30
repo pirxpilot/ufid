@@ -17,7 +17,8 @@ $ npm install --save ufid
 Generate uids with only numbers and letters (both uppercase and lowercase):
 
 ```js
-const { generator } = require('ufid');
+import { generator } from 'ufid';
+
 const uid = generator({ size: 10 });
 
 uid();  // 10 characters long
@@ -29,7 +30,8 @@ uid(8); // another one 8 characters long
 With custom alfabet:
 
 ```js
-const { generator } = require('ufid');
+import { generator } from 'ufid';
+
 const uid = generator({ size: 12, alphabet: 'abc0123A' });
 
 uid();  // 12 characters long, only a-c, 0-3, and A
@@ -40,7 +42,8 @@ uid();  // 12 characters long, only a-c, 0-3, and A
 With custom byte stream:
 
 ```js
-const { generator } = require('ufid');
+import { generator } from 'ufid';
+
 const byteStream = {
   next: () => Math.random() * 62
 };
