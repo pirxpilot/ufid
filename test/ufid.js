@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import randomByteStream from '../lib/random-byte-stream.js';
+import randomByteStream from '#random-byte-stream';
 import generator from '../lib/ufid.js';
 
 test('basic', () => {
