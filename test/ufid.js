@@ -3,7 +3,7 @@ import test from 'node:test';
 import randomByteStream from '../lib/random-byte-stream.js';
 import generator from '../lib/ufid.js';
 
-test('basic', function () {
+test('basic', () => {
   const uid = generator();
   const a = uid();
 
@@ -17,7 +17,7 @@ test('basic', function () {
   assert.notEqual(a, b);
 });
 
-test('overwrite size', function () {
+test('overwrite size', () => {
   const uid = generator();
   const a = uid();
 
@@ -29,7 +29,7 @@ test('overwrite size', function () {
   assert.match(b, /^[a-zA-Z0-9]+$/);
 });
 
-test('with alphabet', function () {
+test('with alphabet', () => {
   const uid = generator({ alphabet: 'abc123' });
   const a = uid();
 
@@ -37,7 +37,7 @@ test('with alphabet', function () {
   assert.match(a, /^[abc123]+$/);
 });
 
-test('with size', function () {
+test('with size', () => {
   const uid = generator({ size: 10 });
   const a = uid();
 
@@ -45,7 +45,7 @@ test('with size', function () {
   assert.match(a, /^[a-zA-Z0-9]+$/);
 });
 
-test('with buffer size', function () {
+test('with buffer size', () => {
   const uid = generator({ bufferSize: 1024, size: 100 });
   const a = uid();
 
@@ -53,7 +53,7 @@ test('with buffer size', function () {
   assert.match(a, /^[a-zA-Z0-9]+$/);
 });
 
-test('with custom byte stream', function () {
+test('with custom byte stream', () => {
   const byteStream = {
     next: () => Math.floor(Math.random() * 255)
   };
@@ -64,7 +64,7 @@ test('with custom byte stream', function () {
   assert.match(a, /^[a-zA-Z0-9]+$/);
 });
 
-test('with shared buffer', function () {
+test('with shared buffer', () => {
   const byteStream = randomByteStream(128);
   const uid = generator({ byteStream });
   const uid2 = generator({ byteStream, size: 12 });

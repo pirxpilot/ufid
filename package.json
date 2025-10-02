@@ -15,9 +15,8 @@
     "ufid",
     "uuid"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4"
+    "@biomejs/biome": "2.2.5"
   },
   "browser": {
     "./lib/random-byte-stream.js": "./lib/browser/random-byte-stream.js"
