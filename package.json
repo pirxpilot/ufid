@@ -1,6 +1,6 @@
 {
   "name": "ufid",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "URL friendly reasonably unique ids.",
   "type": "module",
   "exports": "./index.js",

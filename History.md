@@ -1,4 +1,10 @@
 
+2.0.1 / 2025-10-02
+==================
+
+ * use `package.imports` to define browser specific functionality
+ * upgrade biome to 2.2.5
+
 2.0.0 / 2025-04-30
 ==================
 
