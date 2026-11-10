@@ -1,6 +1,6 @@
 {
   "name": "ufid",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "URL friendly reasonably unique ids.",
   "keywords": [
     "ufid",
