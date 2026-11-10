@@ -3,7 +3,8 @@
   "assist": {
     "actions": {
       "source": {
-        "organizeImports": "on"
+        "organizeImports": "on",
+        "useSortedPackageJson": "on"
       }
     }
   },
@@ -30,6 +31,16 @@
   "json": {
     "formatter": {
       "expand": "always"
+    }
+  },
+  "yaml": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
+  "markdown": {
+    "formatter": {
+      "enabled": false
     }
   },
   "linter": {

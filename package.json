@@ -2,33 +2,33 @@
   "name": "ufid",
   "version": "2.0.1",
   "description": "URL friendly reasonably unique ids.",
+  "keywords": [
+    "ufid",
+    "uuid"
+  ],
+  "repository": "pirxpilot/ufid",
+  "license": "MIT",
+  "author": {
+    "name": "Damian Krzeminski",
+    "email": "pirxpilot@furkot.com",
+    "url": "https://pirxpilot.me"
+  },
   "type": "module",
-  "exports": "./index.js",
   "imports": {
     "#random-byte-stream": {
       "node": "./lib/random-byte-stream.js",
       "default": "./lib/browser/random-byte-stream.js"
     }
   },
-  "author": {
-    "name": "Damian Krzeminski",
-    "email": "pirxpilot@furkot.com",
-    "url": "https://pirxpilot.me"
-  },
-  "repository": "pirxpilot/ufid",
-  "license": "MIT",
-  "keywords": [
-    "ufid",
-    "uuid"
-  ],
-  "devDependencies": {
-    "@biomejs/biome": "2.2.5"
-  },
-  "scripts": {
-    "test": "make check"
-  },
+  "exports": "./index.js",
   "files": [
     "index.js",
     "lib"
-  ]
+  ],
+  "scripts": {
+    "test": "make check"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.6"
+  }
 }
